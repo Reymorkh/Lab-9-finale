@@ -63,15 +63,15 @@ namespace WindowsFormsApp1
       else
         DoubleParseFailMessage();
 
-      // Снизу реализация через статичную функцию
+            // Снизу реализация через статичную функцию
 
-      //if (double.TryParse(MultiplicationTextBox.Text, out double temp))
-      //{
-      //  Rectangle.MultiplyStatic(temp, Rectangles[index]);
-      //  LabelsUpdate();
-      //}
-      //else
-      //  DoubleParseFail();
-    }
+            //if (double.TryParse(MultiplicationTextBox.Text, out double temp))
+            //{
+            //    Rectangle.MultiplyStatic(temp, Rectangles[index]);
+            //    LabelsUpdate();
+            //}
+            //else
+            //    DoubleParseFail();
+        }
   }
 }
