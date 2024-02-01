@@ -13,19 +13,19 @@ using Rectangle = Лабораторная_работа__9_формы.Rectangle;
 
 namespace WindowsFormsApp1
 {
-  public partial class MainForm : Form
-  {
-    public MainForm()
+    public partial class MainForm : Form
     {
-      InitializeComponent();
-    }
+        public MainForm()
+        {
+            InitializeComponent();
+        }
 
-    public void AddValueToListBox(int index) => RectangleListBox.Items.Add("Прямоугольник #" + index + " Длина: " + Rectangles[index - 1].GetLength + " Ширина: " + Rectangles[index - 1].GetWidth);
+        public void AddValueToListBox(int index) => RectangleListBox.Items.Add($"Прямоугольник #{index} Длина: {Rectangles[index].GetLength:f6} Ширина: {Rectangles[index].GetWidth:f6}");
 
     public void ListBoxDataReplacement(int index)
     {
       RectangleListBox.Items.RemoveAt(index);
-      RectangleListBox.Items.Insert(index, "Прямоугольник #" + (index + 1) + " Длина: " + Rectangles[index].GetLength + " Ширина: " + Rectangles[index].GetWidth);
+      RectangleListBox.Items.Insert(index, $"Прямоугольник #{index} Длина: {Rectangles[index].GetLength:f6} Ширина: {Rectangles[index].GetWidth:f6}");
     }
 
     public void ValueUpdate() => ClassCounterTextBox.Text = Convert.ToString(Rectangle.Count);
@@ -33,12 +33,14 @@ namespace WindowsFormsApp1
     #region Create Rectangle Buttons
     private void CreateObjectButton_Click(object sender, EventArgs e)
     {
-      if (double.TryParse(SetLengthTextBox.Text, out double length) && double.TryParse(SetWidthTextBox.Text, out double width))
-      {
-        CreateRectangle(length, width);
-        ValueUpdate();
-        AddValueToListBox(Rectangles.Count);
-      }
+            if (double.TryParse(SetLengthTextBox.Text, out double length) && double.TryParse(SetWidthTextBox.Text, out double width))
+            {
+                CreateRectangle(length, width);
+                ValueUpdate();
+                AddValueToListBox(Rectangles.Count);
+            }
+            else
+                MessageBox.Show("Произошла ошибка при преобразовании введённых значений в тип double.");
     }
 
     private void CreateDefaultObjectButton_Click(object sender, EventArgs e)
@@ -81,5 +83,23 @@ namespace WindowsFormsApp1
         CopyIndex = -1;
       }
     }
-  }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (RectangleListBox.SelectedIndex != -1)
+            {
+                Rectangles[RectangleListBox.SelectedIndex]++;
+                ListBoxDataReplacement(RectangleListBox.SelectedIndex);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (RectangleListBox.SelectedIndex != -1)
+            {
+                Rectangles[RectangleListBox.SelectedIndex]--;
+                ListBoxDataReplacement(RectangleListBox.SelectedIndex);
+            }
+        }
+    }
 }

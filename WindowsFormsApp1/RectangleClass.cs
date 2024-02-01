@@ -15,7 +15,7 @@ namespace Лабораторная_работа__9_формы
 
     private double length, width;
 
-    #region edit
+    #region EditParams
     public void EditLength(double len)
     {
       if (length + len > 0.00009 && length + len < 46340.95)
