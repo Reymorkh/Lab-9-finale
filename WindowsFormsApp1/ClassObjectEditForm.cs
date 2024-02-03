@@ -21,14 +21,14 @@ namespace WindowsFormsApp1
     {
       InitializeComponent();
       index = number;
-      LengthLabel.Text += Rectangles[index].GetLength;
-      WidthLabel.Text += Rectangles[index].GetWidth;
+      LengthLabel.Text += Rectangles[index].Length;
+      WidthLabel.Text += Rectangles[index].Width;
     }
 
     public void LabelsUpdate()
     {
-      LengthLabel.Text = "Длина: " + Rectangles[index].GetLength;
-      WidthLabel.Text = "Ширина: " + Rectangles[index].GetWidth;
+      LengthLabel.Text = "Длина: " + Rectangles[index].Length;
+      WidthLabel.Text = "Ширина: " + Rectangles[index].Width;
     }
 
     private void EditLengthButton_Click(object sender, EventArgs e)
@@ -63,15 +63,15 @@ namespace WindowsFormsApp1
       else
         DoubleParseFailMessage();
 
-            // Снизу реализация через статичную функцию
+      // Снизу реализация через статичную функцию
 
-            //if (double.TryParse(MultiplicationTextBox.Text, out double temp))
-            //{
-            //    Rectangle.MultiplyStatic(temp, Rectangles[index]);
-            //    LabelsUpdate();
-            //}
-            //else
-            //    DoubleParseFail();
-        }
+      //if (double.TryParse(MultiplicationTextBox.Text, out double temp))
+      //{
+      //  Rectangle.MultiplyStatic(temp, Rectangles[index]);
+      //  LabelsUpdate();
+      //}
+      //else
+      //  DoubleParseFail();
+    }
   }
 }
