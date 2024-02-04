@@ -52,7 +52,7 @@
     <Compile Include="Part3MainMenuForm.Designer.cs">
       <DependentUpon>Part3MainMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RectangleArray.cs" />
+    <Compile Include="RectangleArrayClass.cs" />
     <Compile Include="ClassObjectEditForm.cs">
       <SubType>Form</SubType>
     </Compile>

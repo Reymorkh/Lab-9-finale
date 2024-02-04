@@ -80,6 +80,21 @@ namespace Лабораторная_работа__9_формы
     public static explicit operator double (Rectangle rect) => Math.Sqrt(Math.Pow(rect.Length, 2) + Math.Pow(rect.Width, 2)) / 2;
     public static implicit operator bool(Rectangle rect) => rect.Length == rect.Width;
 
-   // public override bool Equals(object obj) { return true; }
+    public override bool Equals(object obj) 
+    {
+      if (obj == null || !(obj is Rectangle))
+        return false;
+      else
+        return this.Length == ((Rectangle)obj).Length && this.Width == ((Rectangle)obj).Width; }
+
+    public override int GetHashCode()
+    {
+      int hashCode = 787142776;
+      hashCode = hashCode * -1521134295 + length.GetHashCode();
+      hashCode = hashCode * -1521134295 + width.GetHashCode();
+      hashCode = hashCode * -1521134295 + Length.GetHashCode();
+      hashCode = hashCode * -1521134295 + Width.GetHashCode();
+      return hashCode;
+    }
   }
 }

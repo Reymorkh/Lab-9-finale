@@ -74,7 +74,7 @@ namespace Лабораторная_работа__9_формы
       int insertIndex = RectangleArrayListBox.SelectedIndex;
       if (CopyIndexPart3 != -1 && insertIndex  != -1)
       {
-        RectangleArrays[insertIndex] = new RectangleArray(RectangleArrays[CopyIndexPart3]);
+        RectangleArrays[insertIndex] = new RectangleArrayClass(RectangleArrays[CopyIndexPart3]);
         ListBoxReplaceData(insertIndex);
         CopyIndexPart3 = -1;
       }
