@@ -2,7 +2,7 @@
 
 namespace Лабораторная_работа__9_формы
 {
-  public class RectangleArrayClass
+  public class RectangleArray
   {
     private Rectangle[] array = new Rectangle[50];
 
@@ -26,9 +26,9 @@ namespace Лабораторная_работа__9_формы
       }
     }
 
-    public RectangleArrayClass() { }
+    public RectangleArray() { }
 
-    public RectangleArrayClass(Random rnd) 
+    public RectangleArray(Random rnd) 
     {
       for (int i = 0; i < array.Length; i++)
       {
@@ -37,7 +37,7 @@ namespace Лабораторная_работа__9_формы
       }
     }
 
-    public RectangleArrayClass(Rectangle[] arr)
+    public RectangleArray(Rectangle[] arr)
     {
 
     }

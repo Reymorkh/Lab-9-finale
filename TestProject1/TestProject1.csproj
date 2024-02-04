@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj" />
+    <ProjectReference Include="..\WindowsFormsApp1\Lab9netframework.csproj" />
   </ItemGroup>
 
 </Project>
