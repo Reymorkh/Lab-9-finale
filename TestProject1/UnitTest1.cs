@@ -1,4 +1,4 @@
-using WindowsFormsApp1;
+using Лабораторная_работа__9_формы;
 using Лабораторная_работа__9_формы;
 
 namespace TestProject1

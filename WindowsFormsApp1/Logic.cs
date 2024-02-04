@@ -11,6 +11,8 @@ namespace Лабораторная_работа__9_формы
 
     public static void CreateRectangleArray() => RectangleArrays.Add(new RectangleArray());
 
+    public static void CreateRectangleArray(int length) => RectangleArrays.Add(new RectangleArray(length));
+
     public static void CreateRectangleArray(Random rnd) => RectangleArrays.Add(new RectangleArray(rnd));
 
     public static void CreateRectangle(double length, double width) => Rectangles.Add(new Rectangle(length, width));

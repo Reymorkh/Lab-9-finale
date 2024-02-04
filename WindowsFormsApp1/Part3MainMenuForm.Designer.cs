@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Лабораторная_работа__9_формы
 {
   partial class Part3MainMenuForm
   {
@@ -28,22 +28,24 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.listBox1 = new System.Windows.Forms.ListBox();
+      this.RectangleArrayListBox = new System.Windows.Forms.ListBox();
       this.CreateDefaultArrayButton = new System.Windows.Forms.Button();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.CustomLengthTextBox = new System.Windows.Forms.TextBox();
       this.CreateRandomArrayButton = new System.Windows.Forms.Button();
       this.CopyArrayButton = new System.Windows.Forms.Button();
       this.InsertArrayButton = new System.Windows.Forms.Button();
       this.CreateCustomLengthArrayButton = new System.Windows.Forms.Button();
+      this.ReturnButton = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
-      // listBox1
+      // RectangleArrayListBox
       // 
-      this.listBox1.FormattingEnabled = true;
-      this.listBox1.Location = new System.Drawing.Point(12, 12);
-      this.listBox1.Name = "listBox1";
-      this.listBox1.Size = new System.Drawing.Size(488, 251);
-      this.listBox1.TabIndex = 0;
+      this.RectangleArrayListBox.FormattingEnabled = true;
+      this.RectangleArrayListBox.Location = new System.Drawing.Point(12, 12);
+      this.RectangleArrayListBox.Name = "RectangleArrayListBox";
+      this.RectangleArrayListBox.Size = new System.Drawing.Size(488, 251);
+      this.RectangleArrayListBox.TabIndex = 0;
+      this.RectangleArrayListBox.DoubleClick += new System.EventHandler(this.RectangleArrayListBox_DoubleClick);
       // 
       // CreateDefaultArrayButton
       // 
@@ -55,13 +57,13 @@
       this.CreateDefaultArrayButton.UseVisualStyleBackColor = true;
       this.CreateDefaultArrayButton.Click += new System.EventHandler(this.CreateDefaultArrayButton_Click);
       // 
-      // textBox1
+      // CustomLengthTextBox
       // 
-      this.textBox1.Location = new System.Drawing.Point(506, 12);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(147, 20);
-      this.textBox1.TabIndex = 2;
-      this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.CustomLengthTextBox.Location = new System.Drawing.Point(506, 12);
+      this.CustomLengthTextBox.Name = "CustomLengthTextBox";
+      this.CustomLengthTextBox.Size = new System.Drawing.Size(147, 20);
+      this.CustomLengthTextBox.TabIndex = 2;
+      this.CustomLengthTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
       // 
       // CreateRandomArrayButton
       // 
@@ -103,18 +105,30 @@
       this.CreateCustomLengthArrayButton.UseVisualStyleBackColor = true;
       this.CreateCustomLengthArrayButton.Click += new System.EventHandler(this.CreateCustomLengthArrayButton_Click);
       // 
+      // ReturnButton
+      // 
+      this.ReturnButton.Location = new System.Drawing.Point(506, 240);
+      this.ReturnButton.Name = "ReturnButton";
+      this.ReturnButton.Size = new System.Drawing.Size(75, 23);
+      this.ReturnButton.TabIndex = 7;
+      this.ReturnButton.Text = "Назад к массивам";
+      this.ReturnButton.UseVisualStyleBackColor = true;
+      this.ReturnButton.Visible = false;
+      this.ReturnButton.Click += new System.EventHandler(this.ReturnButton_Click);
+      // 
       // Part3MainMenuForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(667, 277);
+      this.Controls.Add(this.ReturnButton);
       this.Controls.Add(this.CreateCustomLengthArrayButton);
       this.Controls.Add(this.InsertArrayButton);
       this.Controls.Add(this.CopyArrayButton);
       this.Controls.Add(this.CreateRandomArrayButton);
-      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.CustomLengthTextBox);
       this.Controls.Add(this.CreateDefaultArrayButton);
-      this.Controls.Add(this.listBox1);
+      this.Controls.Add(this.RectangleArrayListBox);
       this.Name = "Part3MainMenuForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Part3";
@@ -126,12 +140,13 @@
 
     #endregion
 
-    private System.Windows.Forms.ListBox listBox1;
+    private System.Windows.Forms.ListBox RectangleArrayListBox;
     private System.Windows.Forms.Button CreateDefaultArrayButton;
-    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.TextBox CustomLengthTextBox;
     private System.Windows.Forms.Button CreateRandomArrayButton;
     private System.Windows.Forms.Button CopyArrayButton;
     private System.Windows.Forms.Button InsertArrayButton;
     private System.Windows.Forms.Button CreateCustomLengthArrayButton;
+    private System.Windows.Forms.Button ReturnButton;
   }
 }

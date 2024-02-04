@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using static Лабораторная_работа__9_формы.Logic;
 using Rectangle = Лабораторная_работа__9_формы.Rectangle;
 
-namespace WindowsFormsApp1
+namespace Лабораторная_работа__9_формы
 {
   public partial class MainForm : Form
   {
@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
       InitializeComponent();
     }
 
-    public void AddValueToListBox(int index) => RectangleListBox.Items.Add($"Прямоугольник #{index} Длина: {Rectangles[index].Length:f6} Ширина: {Rectangles[index].Width:f6}");
+    public void AddValueToListBox(int index) => RectangleListBox.Items.Add($"Прямоугольник #{index + 1} Длина: {Rectangles[index].Length:f6} Ширина: {Rectangles[index].Width:f6}");
 
     public void ListBoxDataReplacement(int index)
     {

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Лабораторная_работа__9_формы
 {
   partial class MainForm
   {

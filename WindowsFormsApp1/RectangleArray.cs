@@ -26,20 +26,30 @@ namespace Лабораторная_работа__9_формы
       }
     }
 
-    public RectangleArray() { }
-
-    public RectangleArray(Random rnd) 
+    public RectangleArray()
     {
-      for (int i = 0; i < array.Length; i++)
-      {
-        array[i].Length = rnd.Next(0, 47000);
-        array[i].Width = rnd.Next(0, 47000);
-      }
+      for (int i = 0; i < Length; i++)
+        array[i] = new Rectangle();
     }
 
-    public RectangleArray(Rectangle[] arr)
+    public RectangleArray(int length) 
     {
+      array = new Rectangle[length]; 
+    for (int i = 0; i < length; i++)
+        array[i] = new Rectangle();
+    }
 
+    public RectangleArray(Random rnd)
+    {
+      for (int i = 0; i < Length; i++)
+        array[i] = new Rectangle(rnd.Next(0, 47000), rnd.Next(0, 47000));
+    }
+
+    public RectangleArray(RectangleArray recArr)
+    {
+      array = new Rectangle[recArr.Length];
+      for (int i = 0; i < Length; i++)
+        array[i] = new Rectangle(recArr[i].Length, recArr[i].Width);
     }
 
   }
