@@ -11,10 +11,31 @@ namespace Лабораторная_работа__9_формы
     public static int indexArr;
 
     public Part3MainMenuForm()
-    { 
+    {
       InitializeComponent();
       if (RectangleArrays.Count != 0)
         FillListBoxArrays();
+    }
+
+    public void ToggleOff()
+    {
+      CreateCustomLengthArrayButton.Enabled = false;
+      CreateDefaultArrayButton.Enabled = false;
+      CreateRandomArrayButton.Enabled = false;
+      CopyArrayButton.Enabled = false;
+      InsertArrayButton.Enabled = false;
+      CustomLengthTextBox.Enabled = false;
+      ReturnButton.Visible = true;
+    }
+
+    public void ToggleOn()
+    {
+      CreateCustomLengthArrayButton.Enabled = true;
+      CreateDefaultArrayButton.Enabled = true;
+      CreateRandomArrayButton.Enabled = true;
+      CopyArrayButton.Enabled = true;
+      InsertArrayButton.Enabled = true;
+      ReturnButton.Visible = false;
     }
 
     public void FillListBoxArrays()
@@ -83,8 +104,8 @@ namespace Лабораторная_работа__9_формы
     private void ReturnButton_Click(object sender, EventArgs e)
     {
       RectangleArrayListBox.Items.Clear();
+      ToggleOn();
       FillListBoxArrays();
-      ReturnButton.Visible = false;
       isArray = true;
     }
 
@@ -99,7 +120,7 @@ namespace Лабораторная_работа__9_формы
           RectangleArrayListBox.Items.Clear();
           FillListBoxRectangles(indexArr);
           isArray = false;
-          ReturnButton.Visible = true;
+          ToggleOff();
         }
         else
         {
