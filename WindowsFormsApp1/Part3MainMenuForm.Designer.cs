@@ -36,6 +36,8 @@
       this.InsertArrayButton = new System.Windows.Forms.Button();
       this.CreateCustomLengthArrayButton = new System.Windows.Forms.Button();
       this.ReturnButton = new System.Windows.Forms.Button();
+      this.ManualInputButton = new System.Windows.Forms.Button();
+      this.ManualInputTextBox = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // RectangleArrayListBox
@@ -116,11 +118,30 @@
       this.ReturnButton.Visible = false;
       this.ReturnButton.Click += new System.EventHandler(this.ReturnButton_Click);
       // 
+      // ManualInputButton
+      // 
+      this.ManualInputButton.Location = new System.Drawing.Point(541, 75);
+      this.ManualInputButton.Name = "ManualInputButton";
+      this.ManualInputButton.Size = new System.Drawing.Size(112, 20);
+      this.ManualInputButton.TabIndex = 8;
+      this.ManualInputButton.Text = "Создать вручную";
+      this.ManualInputButton.UseVisualStyleBackColor = true;
+      this.ManualInputButton.Click += new System.EventHandler(this.ManualInputButton_Click);
+      // 
+      // ManualInputTextBox
+      // 
+      this.ManualInputTextBox.Location = new System.Drawing.Point(506, 75);
+      this.ManualInputTextBox.Name = "ManualInputTextBox";
+      this.ManualInputTextBox.Size = new System.Drawing.Size(29, 20);
+      this.ManualInputTextBox.TabIndex = 9;
+      // 
       // Part3MainMenuForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(667, 277);
+      this.Controls.Add(this.ManualInputTextBox);
+      this.Controls.Add(this.ManualInputButton);
       this.Controls.Add(this.ReturnButton);
       this.Controls.Add(this.CreateCustomLengthArrayButton);
       this.Controls.Add(this.InsertArrayButton);
@@ -148,5 +169,7 @@
     private System.Windows.Forms.Button InsertArrayButton;
     private System.Windows.Forms.Button CreateCustomLengthArrayButton;
     private System.Windows.Forms.Button ReturnButton;
+    private System.Windows.Forms.Button ManualInputButton;
+    private System.Windows.Forms.TextBox ManualInputTextBox;
   }
 }

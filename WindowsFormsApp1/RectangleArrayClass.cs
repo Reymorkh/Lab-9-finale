@@ -27,30 +27,51 @@ namespace Лабораторная_работа__9_формы
       }
     }
 
-    public RectangleArrayClass()
+    public RectangleArrayClass() //базовый
     {
       for (int i = 0; i < Length; i++)
         array[i] = new Rectangle();
     }
 
-    public RectangleArrayClass(int length)
+    public RectangleArrayClass(int length) //по заданной длине
     {
       array = new Rectangle[length];
       for (int i = 0; i < length; i++)
         array[i] = new Rectangle();
     }
 
-    public RectangleArrayClass(Random rnd)
+    public RectangleArrayClass(Random rnd) //rng
     {
       for (int i = 0; i < Length; i++)
         array[i] = new Rectangle(rnd.Next(0, 47000), rnd.Next(0, 47000));
     }
 
-    public RectangleArrayClass(RectangleArrayClass recArr)
+    public RectangleArrayClass(RectangleArrayClass recArr) //copy
     {
       array = new Rectangle[recArr.Length];
       for (int i = 0; i < Length; i++)
         array[i] = new Rectangle(recArr[i].Length, recArr[i].Width);
+    }
+
+    public RectangleArrayClass(bool uselessSignal) // метод ручного ввода
+    {
+      for (int i = 0; i < Length; i++) 
+      {
+        double length = ReadDouble(), width = ReadDouble();
+        array[i] = new Rectangle(length, width);
+      }
+    }
+
+    public RectangleArrayClass(Rectangle[] arr) // метод ручного ввода с получением массива
+    {
+      array = arr;
+    }
+
+    private double ReadDouble()
+    {
+      double value = 0;
+      while (double.TryParse(Console.ReadLine(), out value)) ;
+      return value;
     }
 
     public override bool Equals(object obj)

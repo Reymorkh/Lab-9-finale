@@ -168,6 +168,43 @@ namespace UnitTestProject1
       Rectangle expected = Rectangles[0];
       Assert.AreEqual(expected, new Rectangle(expected));
     }
+
+    [TestMethod]
+    public void RectangleBinAdditionRight()
+    {
+      Rectangle expected = new Rectangle(1, 1);
+      Rectangle actual = new Rectangle(3, 3);
+      expected += 2;
+      Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void RectangleBinAdditionLeft()
+    {
+      Rectangle expected = new Rectangle(1, 1);
+      Rectangle actual = new Rectangle(3, 3);
+      expected = 2 + expected;
+      Assert.AreEqual(expected, actual);
+    }
+
+
+    [TestMethod]
+    public void RectangleBinSubtractionRight()
+    {
+      Rectangle expected = new Rectangle(3, 3);
+      Rectangle actual = new Rectangle(1, 1);
+      expected -= 2;
+      Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void RectangleBinSubtractionLeft()
+    {
+      Rectangle expected = new Rectangle(3, 3);
+      Rectangle actual = new Rectangle(1, 1);
+      expected = 2 - expected;
+      Assert.AreEqual(expected, actual);
+    }
     //[TestMethod]
     //public void ObjectTest()
     //{

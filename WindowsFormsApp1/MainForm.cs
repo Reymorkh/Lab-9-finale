@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using static Лабораторная_работа__9_формы.Logic;
-using Rectangle = Лабораторная_работа__9_формы.Rectangle;
 
 namespace Лабораторная_работа__9_формы
 {

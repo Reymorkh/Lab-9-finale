@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using static Лабораторная_работа__9_формы.Logic;
 
@@ -25,6 +24,8 @@ namespace Лабораторная_работа__9_формы
       CopyArrayButton.Enabled = false;
       InsertArrayButton.Enabled = false;
       CustomLengthTextBox.Enabled = false;
+      ManualInputTextBox.Enabled = false;
+      ManualInputButton.Enabled = false;
       ReturnButton.Visible = true;
     }
 
@@ -36,6 +37,9 @@ namespace Лабораторная_работа__9_формы
       CopyArrayButton.Enabled = true;
       InsertArrayButton.Enabled = true;
       ReturnButton.Visible = false;
+      ManualInputTextBox.Enabled = true;
+      ManualInputButton.Enabled = true;
+      CustomLengthTextBox.Enabled = true;
     }
 
     public void FillListBoxArrays()
@@ -130,6 +134,17 @@ namespace Лабораторная_работа__9_формы
           RectangleArrayListBox.Items.Clear();
           FillListBoxRectangles(indexArr);
         }
+      }
+    }
+
+    private void ManualInputButton_Click(object sender, EventArgs e)
+    {
+      if (int.TryParse(ManualInputTextBox.Text, out int value) && value > 0)
+      {
+        ManualInputForm f = new ManualInputForm(value);
+        f.ShowDialog();
+        f.Dispose();
+        AddValueToListBox();
       }
     }
   }
